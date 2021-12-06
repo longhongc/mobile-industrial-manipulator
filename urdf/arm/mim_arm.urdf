@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mim_arm">
+  <link
+    name="arm_base_link">
+    <inertial>
+      <origin
+        xyz="4.0324476207476E-19 0.0201017280573514 1.22282880618414E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.689240659662406" />
+      <inertia
+        ixx="0.00102434108086272"
+        ixy="-4.53910013248264E-22"
+        ixz="6.32595764050144E-21"
+        iyy="0.00186019972980973"
+        iyz="9.11046134713641E-21"
+        izz="0.00102434108086272" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/arm_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/arm_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="L1">
+    <inertial>
+      <origin
+        xyz="0.0157111625345941 0.0745368802832561 3.13647523523372E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1.4669282614243" />
+      <inertia
+        ixx="0.00308011627370175"
+        ixy="-0.000280318600425359"
+        ixz="-2.78115993691665E-08"
+        iyy="0.00284729677291346"
+        iyz="-4.24599383233505E-08"
+        izz="0.00401457062629856" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0413"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="arm_base_link" />
+    <child
+      link="L1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="500"
+      velocity="30" /> 
+  </joint>
+  <link
+    name="L2">
+    <inertial>
+      <origin
+        xyz="0.0779479349113748 0.280913529421034 7.34410938670474E-07"
+        rpy="0 0 0" />
+      <mass
+        value="2.29683601605086" />
+      <inertia
+        ixx="0.168464226213727"
+        ixy="-0.00381982056169402"
+        ixz="-4.05034586847763E-07"
+        iyy="0.00565087178159435"
+        iyz="-1.13082867636618E-07"
+        izz="0.17016215171057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J2"
+    type="continuous">
+    <origin
+      xyz="0.088 0.0867 0"
+      rpy="0 0 0" />
+    <parent
+      link="L1" />
+    <child
+      link="L2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="500"
+      velocity="30" />
+  </joint>
+  <link
+    name="L3">
+    <inertial>
+      <origin
+        xyz="-0.0366808275220467 0.279543173188777 1.74197462903595E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.98768529541544" />
+      <inertia
+        ixx="0.126872933757764"
+        ixy="0.000897781115611846"
+        ixz="-1.17394389933483E-07"
+        iyy="0.0042727539970328"
+        iyz="-9.57570427050816E-08"
+        izz="0.127637985047137" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J3"
+    type="continuous">
+    <origin
+      xyz="0 0.6121 0"
+      rpy="0 0 0" />
+    <parent
+      link="L2" />
+    <child
+      link="L3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="1000"
+      velocity="30" />
+  </joint>
+  <link
+    name="L4">
+    <inertial>
+      <origin
+        xyz="0.0564196283832443 0.00575848624320208 2.32725778393383E-09"
+        rpy="0 0 0" />
+      <mass
+        value="1.00354559055857" />
+      <inertia
+        ixx="0.00146767416739237"
+        ixy="-9.69725683514423E-06"
+        ixz="-1.00088198137846E-10"
+        iyy="0.00165814344372837"
+        iyz="1.53623505620225E-10"
+        izz="0.00179215914016097" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J4"
+    type="continuous">
+    <origin
+      xyz="0.018045 0.5722 0"
+      rpy="0 0 0" />
+    <parent
+      link="L3" />
+    <child
+      link="L4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="500"
+      velocity="30" />
+  </joint>
+  <link
+    name="L5">
+    <inertial>
+      <origin
+        xyz="0.0427941842249601 0.0544573316193455 -7.21449320187494E-09"
+        rpy="0 0 0" />
+      <mass
+        value="1.70333938122037" />
+      <inertia
+        ixx="0.00250547807265485"
+        ixy="-9.58297477792303E-05"
+        ixz="-1.14878663355293E-09"
+        iyy="0.00349169270157988"
+        iyz="-3.78091074524545E-10"
+        izz="0.0034728289602989" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/L5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J5"
+    type="continuous">
+    <origin
+      xyz="0.0580977444099582 0.0578500000000002 0"
+      rpy="0 0 0" />
+    <parent
+      link="L4" />
+    <child
+      link="L5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="1000"
+      velocity="30" />
+  </joint>
+  <link
+    name="GR">
+    <inertial>
+      <origin
+        xyz="0.0273459250555881 2.22044604925031E-16 4.26469877311135E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.437864913839137" />
+      <inertia
+        ixx="0.00070349828621003"
+        ixy="-4.74006641006901E-19"
+        ixz="-2.92590104031235E-20"
+        iyy="0.000536785327844237"
+        iyz="5.46749773398329E-14"
+        izz="0.000377025648391104" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/GR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/GR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="J6"
+    type="fixed">
+    <origin
+      xyz="0.0912 0.0578499999999997 0"
+      rpy="0 0 0" />
+    <parent
+      link="L5" />
+    <child
+      link="GR" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="G1">
+    <inertial>
+      <origin
+        xyz="0.0284421452977443 0.00999999999999979 0.0156979615555439"
+        rpy="0 0 0" />
+      <mass
+        value="0.0483522534480086" />
+      <inertia
+        ixx="8.8203246982489E-06"
+        ixy="1.90928784393704E-21"
+        ixz="6.48121610168244E-06"
+        iyy="5.66268780083E-05"
+        iyz="-8.20669761878087E-22"
+        izz="5.14050368732516E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/G1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/G1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="GJ1"
+    type="prismatic">
+    <origin
+      xyz="0.055 -0.0100000000000002 0"
+      rpy="0 0 0" />
+    <parent
+      link="GR" />
+    <child
+      link="G1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.04"
+      effort="100"
+      velocity="30" />
+  </joint>
+  <link
+    name="G2">
+    <inertial>
+      <origin
+        xyz="0.33878488970771 -1.428 0.015697961555544"
+        rpy="0 0 0" />
+      <mass
+        value="0.0483522534480085" />
+      <inertia
+        ixx="8.82032469824889E-06"
+        ixy="-2.73882257929111E-19"
+        ixz="6.48121610168243E-06"
+        iyy="5.66268780082998E-05"
+        iyz="3.42661424317774E-20"
+        izz="5.14050368732515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/G2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/arm/G2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="GJ2"
+    type="prismatic">
+    <origin
+      xyz="-0.255342744409958 -1.428 0"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="GR" />
+    <child
+      link="G2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.04"
+      effort="100"
+      velocity="30" />
+  </joint>
+</robot>

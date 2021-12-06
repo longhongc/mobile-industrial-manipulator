@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot>
+  <!-- drive wheels transmission -->
+  <transmission name="PW1_T">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PW1J">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PW1_M">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="PW2_T">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="PW2J">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="PW2_M">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+    </actuator>
+  </transmission>
+    
+</robot>
+

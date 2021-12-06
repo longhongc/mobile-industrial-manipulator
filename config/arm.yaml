@@ -1,0 +1,65 @@
+mim_arm:  # change the name
+  # Controller left steering
+  joint1_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: 'J1' # Name of the joint.  
+    pid: {p: 100, i: 10, d: 30, i_clamp_mim: -100.0, i_clamp_max: 100} # Enter your pid values eg. {p: 100.0 , i: 0.0 , d: 0.0}
+
+  joint2_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: 'J2' # Name of the joint.  
+    pid: {p: 200, i: 0.01, d: 50, i_clamp_min: -100.0, i_clamp_max: 100} 
+
+  joint3_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: 'J3' # Name of the joint.  
+    pid: {p: 200, i: 10.0, d: 20, i_clamp_min: -100.0, i_clamp_max: 100.0} 
+
+  joint4_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: 'J4' # Name of the joint.  
+    pid: {p: 100, i: 0.1, d: 10, i_clamp_min: -100.0, i_clamp_max: 100} 
+
+  joint5_controller: # change the name
+    type: effort_controllers/JointPositionController # Type of controller. 
+    joint: 'J5' # Name of the joint.  
+    pid: {p: 100, i: 0.1, d: 10, i_clamp_min: -100.0, i_clamp_max: 100} 
+
+  # gripper1_controller: # change the name
+  #   type: effort_controllers/JointPositionController # Type of controller. 
+  #   joint: 'GJ1' # Name of the joint.  
+  #   pid: {p: 100, i: 0.5, d: 10} 
+  #
+  # gripper2_controller: # change the name
+  #   type: effort_controllers/JointPositionController # Type of controller. 
+  #   joint: 'GJ2' # Name of the joint.  
+  #   pid: {p: 100, i: 0.5, d: 10} 
+  #
+  gripper_controller:
+    type: effort_controllers/JointGroupPositionController
+    joints:
+        - GJ1
+        - GJ2
+    GJ1:
+        pid: {p: 100, i: 0.5, d: 10.0}
+    GJ2:
+        pid: {p: 100, i: 0.5, d: 10.0}
+    # pid_gains: 
+    #     GJ1: {p: 10, i: 1.0, d: 0.0}
+    #     GJ2: {p: 10, i: 1.0, d: 0.0}
+    #
+
+
+  # Publish all joint states -----------------------------------
+  # joint_state_controller:
+  #   type: joint_state_controller/JointStateController
+  #   publish_rate: 50
+  #
+  # zeros:
+  #     'J01': 0
+  #     'J12': 1.57
+  #     'J23': -1.57
+  #     'J34': 1.57
+  #     'J45': 0
+  #     'GJ1': 0
+  #     'GJ2': 0

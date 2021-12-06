@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<robot name="mim_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find mim_robots)/urdf/arm/mim_arm.urdf"/>
+
+  <link name="world"></link>
+  <joint name="world_to_arm" type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="world" />
+    <child
+      link="arm_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <xacro:include filename="$(find mim_robots)/urdf/gazebo/mim_common.gazebo"/>
+  <xacro:include filename="$(find mim_robots)/urdf/arm/arm_transmission.urdf"/>
+</robot>

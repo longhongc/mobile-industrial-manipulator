@@ -3,7 +3,7 @@
   <!-- drive wheels transmission -->
   <transmission name="PW1_T">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="PW1J">
+    <joint name="PW1_J">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="PW1_M">
@@ -14,7 +14,7 @@
 
   <transmission name="PW2_T">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="PW2J">
+    <joint name="PW2_J">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
     <actuator name="PW2_M">

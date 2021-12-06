@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.115677345952096 -0.00101374975812835 0.184699133480931"
+        xyz="-0.0310750411039088 -0.00101374975813606 0.238160967766868"
         rpy="0 0 0" />
       <mass
-        value="0.858306725756551" />
+        value="24.5477793824158" />
       <inertia
-        ixx="0.00562714308276403"
-        ixy="-5.78370242802336E-17"
-        ixz="-0.000265893821689072"
-        iyy="0.0122556900176676"
-        iyz="1.92728266798107E-17"
-        izz="0.0177117373798651" />
+        ixx="0.424952095698885"
+        ixy="1.10780566636945E-14"
+        ixz="-0.00207397180917225"
+        iyy="0.949637739801501"
+        iyz="-2.54609920500575E-16"
+        izz="1.35600296920664" />
     </inertial>
     <visual>
       <origin
@@ -26,12 +26,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/base_link.STL" />
+          filename="package://mim_robots/meshes/rockerb/base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/base_link.STL" />
+          filename="package://mim_robots/meshes/rockerb/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -48,17 +48,17 @@
     name="B1">
     <inertial>
       <origin
-        xyz="0.0999674690477277 -0.0361131348896797 -0.113641573438832"
+        xyz="0.100235231582522 -0.0361286147008293 -0.113654678832962"
         rpy="0 0 0" />
       <mass
-        value="0.53077264293737" />
+        value="4.13605312852322" />
       <inertia
-        ixx="0.000527824522706431"
-        ixy="-7.5201190267607E-19"
-        ixz="-1.07866200684231E-18"
-        iyy="0.00244511022290894"
-        iyz="-3.92188750880976E-06"
-        izz="0.00222579731791319" />
+        ixx="0.0041169709377967"
+        ixy="-2.41050473724805E-14"
+        ixz="5.06991297414661E-17"
+        iyy="0.019071816222605"
+        iyz="-3.05907225686968E-05"
+        izz="0.0173611587404094" />
     </inertial>
     <visual>
       <origin
@@ -66,12 +66,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/B1.STL" />
+          filename="package://mim_robots/meshes/rockerb/B1.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -80,16 +80,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/B1.STL" />
+          filename="package://mim_robots/meshes/rockerb/B1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="b1_j"
+    name="B1_J"
     type="continuous">
     <origin
-      xyz="0.158749999999997 -0.0785137497581306 0.14499999999999"
-      rpy="1.5707963267949 0 3.14159265358979" />
+      xyz="0.158749999999996 -0.0785137497581288 0.144999999999991"
+      rpy="1.57079632679489 0 -3.14159265358979" />
     <parent
       link="base_link" />
     <child
@@ -101,16 +101,16 @@
     name="P1">
     <inertial>
       <origin
-        xyz="6.80011602582908E-16 -7.8706537162675E-15 -0.01"
+        xyz="7.21644966006352E-16 2.0792882191223E-13 -0.0100000000000031"
         rpy="0 0 0" />
       <mass
         value="0.0720898510112747" />
       <inertia
         ixx="3.02016940016694E-05"
-        ixy="4.44286461820474E-23"
-        ixz="1.34334655542233E-22"
+        ixy="5.16987882845642E-23"
+        ixz="1.27359215146698E-22"
         iyy="3.02016940016694E-05"
-        iyz="4.07470980183428E-23"
+        iyz="2.57070454816238E-23"
         izz="5.57490232813793E-05" />
     </inertial>
     <visual>
@@ -119,7 +119,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/P1.STL" />
+          filename="package://mim_robots/meshes/rockerb/P1.STL" />
       </geometry>
       <material
         name="">
@@ -133,15 +133,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/P1.STL" />
+          filename="package://mim_robots/meshes/rockerb/P1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="p1_j"
+    name="P1_J"
     type="continuous">
     <origin
-      xyz="0.15875 -0.107499999999992 -0.121999999999999"
+      xyz="0.15875 -0.107499999999674 -0.122"
       rpy="0 0 -1.5707963267949" />
     <parent
       link="B1" />
@@ -154,17 +154,17 @@
     name="C1">
     <inertial>
       <origin
-        xyz="-0.00692686642669871 -0.0299432222383514 -8.13408648769887E-09"
+        xyz="-0.00692686642675311 -0.0299432222383374 -8.13409459232695E-09"
         rpy="0 0 0" />
       <mass
-        value="0.0175932153888398" />
+        value="0.13722708003295" />
       <inertia
-        ixx="1.27324338860059E-05"
-        ixy="-2.43426200728112E-06"
-        ixz="9.66327633571756E-13"
-        iyy="5.48719613282638E-06"
-        iyz="2.85844566421913E-12"
-        izz="1.24634950449503E-05" />
+        ixx="9.93129843107701E-05"
+        ixy="-1.89872436569062E-05"
+        ixz="7.53735564122841E-12"
+        iyy="4.28001298361218E-05"
+        iyz="2.22958763209591E-11"
+        izz="9.72152613506119E-05" />
     </inertial>
     <visual>
       <origin
@@ -172,12 +172,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C1.STL" />
+          filename="package://mim_robots/meshes/rockerb/C1.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="1 0.501960784313725 0.501960784313725 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -186,16 +186,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C1.STL" />
+          filename="package://mim_robots/meshes/rockerb/C1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="c1_j"
+    name="C1_J"
     type="continuous">
     <origin
-      xyz="-0.178750000000004 -0.0209999999999924 -0.0999999999999921"
-      rpy="-3.14159265358979 -0.02648661094944 3.14159265358979" />
+      xyz="-0.178749999999958 -0.0210000000003531 -0.100000000000004"
+      rpy="-3.14159265358973 -0.026486610949433 3.14159265358979" />
     <parent
       link="B1" />
     <child
@@ -207,14 +207,14 @@
     name="CW1">
     <inertial>
       <origin
-        xyz="0 -4.9960036108132E-16 -1.04083408558608E-14"
+        xyz="2.75890421619351E-14 8.21565038222616E-15 -2.02615701994091E-15"
         rpy="0 0 0" />
       <mass
         value="0.0741004703095722" />
       <inertia
         ixx="3.02888208379289E-05"
-        ixy="9.6123278914688E-22"
-        ixz="2.00716491450643E-21"
+        ixy="1.76220527240161E-22"
+        ixz="2.51174769126063E-21"
         iyy="3.03603122293902E-05"
         iyz="1.34831343534886E-06"
         izz="5.57177442758839E-05" />
@@ -225,7 +225,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW1.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW1.STL" />
       </geometry>
       <material
         name="">
@@ -239,15 +239,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW1.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="cw1_j"
+    name="CW1_J"
     type="continuous">
     <origin
-      xyz="-0.0210069660112558 -0.0864999999999994 0"
+      xyz="-0.0210069660114238 -0.0864999999999466 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C1" />
@@ -260,17 +260,17 @@
     name="B2">
     <inertial>
       <origin
-        xyz="0.0999674690477277 -0.0361131348896779 0.113641573438832"
+        xyz="0.10023523158244 -0.0361286147010263 0.113654678832957"
         rpy="0 0 0" />
       <mass
-        value="0.53077264293737" />
+        value="4.13605312852322" />
       <inertia
-        ixx="0.000527824522706431"
-        ixy="-4.55008845729206E-19"
-        ixz="-1.27846908717707E-18"
-        iyy="0.00244511022290894"
-        iyz="3.92188750880748E-06"
-        izz="0.00222579731791319" />
+        ixx="0.0041169709377967"
+        ixy="-3.35274558825134E-18"
+        ixz="-9.94280947026617E-18"
+        iyy="0.0190718162226049"
+        iyz="3.05907225686985E-05"
+        izz="0.0173611587404094" />
     </inertial>
     <visual>
       <origin
@@ -278,12 +278,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/B2.STL" />
+          filename="package://mim_robots/meshes/rockerb/B2.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -292,15 +292,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/B2.STL" />
+          filename="package://mim_robots/meshes/rockerb/B2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="b2_j"
+    name="B2_J"
     type="continuous">
     <origin
-      xyz="0.158749999999999 0.0764862502418763 0.14499999999999"
+      xyz="0.158749999999999 0.0764862502418753 0.144999999999991"
       rpy="1.5707963267949 0 3.14159265358979" />
     <parent
       link="base_link" />
@@ -313,16 +313,16 @@
     name="P2">
     <inertial>
       <origin
-        xyz="7.49400541621981E-16 -5.10567517578022E-15 0.0100000000000003"
+        xyz="8.32667268468867E-16 -1.68497409166989E-14 0.0100000000000003"
         rpy="0 0 0" />
       <mass
         value="0.0720898510112747" />
       <inertia
         ixx="3.02016940016694E-05"
-        ixy="8.07793566946392E-23"
-        ixz="1.34334655542233E-22"
+        ixy="5.87669819953445E-23"
+        ixz="1.27359215146698E-22"
         iyy="3.02016940016694E-05"
-        iyz="4.07470980183421E-23"
+        iyz="2.57070454816238E-23"
         izz="5.57490232813793E-05" />
     </inertial>
     <visual>
@@ -331,7 +331,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/P2.STL" />
+          filename="package://mim_robots/meshes/rockerb/P2.STL" />
       </geometry>
       <material
         name="">
@@ -345,12 +345,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/P2.STL" />
+          filename="package://mim_robots/meshes/rockerb/P2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="p2_j"
+    name="P2_J"
     type="continuous">
     <origin
       xyz="0.15875 -0.107499999999987 0.122000000000001"
@@ -366,17 +366,17 @@
     name="C2">
     <inertial>
       <origin
-        xyz="-0.00692686642669299 -0.0299432222383514 -8.1340970348176E-09"
+        xyz="-0.00692686642668838 -0.0299432222383513 -8.13408762567747E-09"
         rpy="0 0 0" />
       <mass
-        value="0.0175932153888397" />
+        value="0.137227080032951" />
       <inertia
-        ixx="1.27324338860059E-05"
-        ixy="-2.43426200728111E-06"
-        ixz="9.66327654271124E-13"
-        iyy="5.48719613282634E-06"
-        iyz="2.85844571260589E-12"
-        izz="1.24634950449502E-05" />
+        ixx="9.93129843108464E-05"
+        ixy="-1.89872436567927E-05"
+        ixz="7.53735568556942E-12"
+        iyy="4.28001298360459E-05"
+        iyz="2.22958765455702E-11"
+        izz="9.72152613506122E-05" />
     </inertial>
     <visual>
       <origin
@@ -384,12 +384,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C2.STL" />
+          filename="package://mim_robots/meshes/rockerb/C2.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="1 0.501960784313725 0.501960784313725 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -398,12 +398,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C2.STL" />
+          filename="package://mim_robots/meshes/rockerb/C2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="c2_j"
+    name="C2_J"
     type="continuous">
     <origin
       xyz="-0.178749999999998 -0.0209999999999919 0.0999999999999913"
@@ -419,14 +419,14 @@
     name="CW2">
     <inertial>
       <origin
-        xyz="0 1.11022302462516E-16 2.44249065417534E-15"
+        xyz="4.16333634234434E-17 -5.55111512312578E-17 -2.33146835171283E-15"
         rpy="0 0 0" />
       <mass
         value="0.0741004703095722" />
       <inertia
         ixx="3.02888208379289E-05"
-        ixy="3.76486624506558E-23"
-        ixz="2.52750212524786E-21"
+        ixy="1.98439202389641E-21"
+        ixz="1.90502309436903E-21"
         iyy="3.03603122293902E-05"
         iyz="1.34831343534886E-06"
         izz="5.57177442758839E-05" />
@@ -437,7 +437,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW2.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW2.STL" />
       </geometry>
       <material
         name="">
@@ -451,15 +451,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW2.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="cw2_j"
+    name="CW2_J"
     type="continuous">
     <origin
-      xyz="-0.0210069660112499 -0.0864999999999993 0"
+      xyz="-0.0210069660112452 -0.0864999999999993 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C2" />
@@ -472,17 +472,17 @@
     name="C3">
     <inertial>
       <origin
-        xyz="-0.00692686642669293 0.0635846418066492 -8.13409700706202E-09"
+        xyz="-0.00692686642669288 -0.0299432222383512 -8.13409697930645E-09"
         rpy="0 0 0" />
       <mass
-        value="0.0175932153888398" />
+        value="0.13722708003295" />
       <inertia
-        ixx="1.27324338860059E-05"
-        ixy="-2.43426200728113E-06"
-        ixz="9.66327658506288E-13"
-        iyy="5.48719613282638E-06"
-        iyz="2.85844571386321E-12"
-        izz="1.24634950449503E-05" />
+        ixx="9.93129843108461E-05"
+        ixy="-1.89872436567928E-05"
+        ixz="7.53735574041481E-12"
+        iyy="4.28001298360458E-05"
+        iyz="2.22958765674871E-11"
+        izz="9.7215261350612E-05" />
     </inertial>
     <visual>
       <origin
@@ -490,12 +490,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C3.STL" />
+          filename="package://mim_robots/meshes/rockerb/C3.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="1 0.501960784313725 0.501960784313725 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -504,16 +504,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C3.STL" />
+          filename="package://mim_robots/meshes/rockerb/C3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="c3_j"
+    name="C3_J"
     type="continuous">
     <origin
-      xyz="-0.337499999999998 0.176486250241871 0.0304721359549893"
-      rpy="1.57079632679489 0 0.0264866109494337" />
+      xyz="-0.3375 0.17648625024187 0.123999999999991"
+      rpy="1.5707963267949 0 0.0264866109494337" />
     <parent
       link="base_link" />
     <child
@@ -525,14 +525,14 @@
     name="CW3">
     <inertial>
       <origin
-        xyz="-1.38777878078145E-17 0 -8.32667268468867E-17"
+        xyz="0 0 -5.55111512312578E-17"
         rpy="0 0 0" />
       <mass
         value="0.0741004703095721" />
       <inertia
         ixx="3.02888208379289E-05"
-        ixy="1.77029776998244E-21"
-        ixz="2.25034416444156E-21"
+        ixy="1.74196206213053E-21"
+        ixz="2.1949650708904E-21"
         iyy="3.03603122293902E-05"
         iyz="1.34831343534886E-06"
         izz="5.57177442758839E-05" />
@@ -543,7 +543,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW3.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW3.STL" />
       </geometry>
       <material
         name="">
@@ -557,15 +557,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW3.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW3.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="cw3_j"
+    name="CW3_J"
     type="continuous">
     <origin
-      xyz="-0.02100696601125 0.00702786404500043 0"
+      xyz="-0.02100696601125 -0.0865 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C3" />
@@ -578,17 +578,17 @@
     name="C4">
     <inertial>
       <origin
-        xyz="-0.00692686642669288 0.063584641806649 -8.13409695155087E-09"
+        xyz="-0.00692686642669293 -0.0299432222383513 -8.13409689603972E-09"
         rpy="0 0 0" />
       <mass
-        value="0.0175932153888396" />
+        value="0.13722708003295" />
       <inertia
-        ixx="1.27324338860058E-05"
-        ixy="-2.43426200728109E-06"
-        ixz="9.6632765231236E-13"
-        iyy="5.48719613282633E-06"
-        iyz="2.85844570629285E-12"
-        izz="1.24634950449502E-05" />
+        ixx="9.9312984310846E-05"
+        ixy="-1.89872436567927E-05"
+        ixz="7.53735563644151E-12"
+        iyy="4.28001298360457E-05"
+        iyz="2.2295876347788E-11"
+        izz="9.72152613506117E-05" />
     </inertial>
     <visual>
       <origin
@@ -596,12 +596,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C4.STL" />
+          filename="package://mim_robots/meshes/rockerb/C4.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="1 0.501960784313725 0.501960784313725 1" />
+          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
       </material>
     </visual>
     <collision>
@@ -610,16 +610,16 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/C4.STL" />
+          filename="package://mim_robots/meshes/rockerb/C4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="c4_j"
+    name="C4_J"
     type="continuous">
     <origin
-      xyz="-0.337500000000003 -0.178513749758129 0.0304699999999907"
-      rpy="1.57079632679489 0 0.0264866109494337" />
+      xyz="-0.337500000000004 -0.17851374975813 0.12399786404499"
+      rpy="1.5707963267949 0 0.0264866109494337" />
     <parent
       link="base_link" />
     <child
@@ -631,14 +631,14 @@
     name="CW4">
     <inertial>
       <origin
-        xyz="0 -5.55111512312578E-17 -2.4980018054066E-16"
+        xyz="0 -5.55111512312578E-17 0"
         rpy="0 0 0" />
       <mass
         value="0.0741004703095722" />
       <inertia
         ixx="3.02888208379289E-05"
-        ixy="7.00422945090931E-22"
-        ixz="1.98417565024643E-21"
+        ixy="1.13551811557222E-21"
+        ixz="2.7904226818547E-21"
         iyy="3.03603122293902E-05"
         iyz="1.34831343534886E-06"
         izz="5.57177442758839E-05" />
@@ -649,7 +649,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW4.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW4.STL" />
       </geometry>
       <material
         name="">
@@ -663,15 +663,15 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_rockerb/meshes/CW4.STL" />
+          filename="package://mim_robots/meshes/rockerb/CW4.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="cw4_j"
+    name="CW4_J"
     type="continuous">
     <origin
-      xyz="-0.02100696601125 0.00702786404500066 0"
+      xyz="-0.0210069660112505 -0.0864999999999983 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C4" />
@@ -679,5 +679,58 @@
       link="CW4" />
     <axis
       xyz="0 0.0529484501323336 0.998597246956241" />
+  </joint>
+  <link
+    name="LIDAR">
+    <inertial>
+      <origin
+        xyz="0.0121635550249433 -0.028764888574191 0.000482127498249719"
+        rpy="0 0 0" />
+      <mass
+        value="0.0730843681136202" />
+      <inertia
+        ixx="1.95811927494857E-05"
+        ixy="-4.28353547726108E-07"
+        ixz="1.03772771795953E-07"
+        iyy="4.1417819481871E-05"
+        iyz="-9.42527080184659E-09"
+        izz="2.41241304659595E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/rockerb/LIDAR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mim_robots/meshes/rockerb/LIDAR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LIDAR_J"
+    type="fixed">
+    <origin
+      xyz="0.317603295710605 -0.000963772085933554 0.338499999999593"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="LIDAR" />
+    <axis
+      xyz="0 0 0" />
   </joint>
 </robot>

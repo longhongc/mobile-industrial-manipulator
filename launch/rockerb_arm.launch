@@ -1,46 +1,45 @@
 <?xml version="1.0"?>
 <launch>
 
-<!-- warehouse simulation environment -->
-  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find warehouse_simulation)/models"/>
-  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find warehouse_simulation)/models"/>
+  <!-- warehouse simulation environment -->
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find mim_robots)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find mim_robots)/models"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find warehouse_simulation)/worlds/warehouse.world"/>
+    <arg name="world_name" value="$(find mim_robots)/worlds/warehouse.world"/>
     <arg name="paused" value="true"/>
     <arg name="gui" value="true"/> 
   </include>
 
-<!-- add robot  -->  
-  <arg name="init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
+  <!-- add robot  -->  
+  <arg name="robot_init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
   <arg name="ramp_init_pose" value="-x 1 -y 0.5 -z 0 -R 0 -P 0 -Y 0"/>
 
-  <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/mim_rockerb_arm.xacro"/>
-  <param name="ramp_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/ramp.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/rockerb_arm.xacro"/>
+  <param name="ramp_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/other_models/ramp.urdf"/>
 
-  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="$(arg init_pose) -param robot_description -urdf -model mim_rockerb_arm"/> 
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="$(arg robot_init_pose) -param robot_description -urdf -model mim_rockerb_arm"/> 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_ramp" args="$(arg ramp_init_pose) -param ramp_description -urdf -model ramp"/> 
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="/mim_rockerb_arm" respawn="false" output="screen">
     <param name="publish_frequency" value="40.0"/>
   </node>
 
-  <!-- <rosparam command="load" -->
-  <!--     file="$(find mim_robots)/config/arm.yaml"/> -->
+  <rosparam command="load"
+      file="$(find mim_robots)/config/arm.yaml"/>
   <rosparam command="load"
       file="$(find mim_robots)/config/rockerb.yaml"/>
 
   <node name="rockerb_controller_manager" pkg="controller_manager" type="spawner"
       respawn="false" output="screen" 
-      args="mim_rockerb/mobile_base_controller"/>
-            <!-- mim_arm/joint1_controller  -->
-            <!-- mim_arm/joint2_controller  -->
-            <!-- mim_arm/joint3_controller  -->
-            <!-- mim_arm/joint4_controller  -->
-            <!-- mim_arm/joint5_controller  -->
-            <!-- mim_arm/gripper1_controller  -->
-            <!-- mim_arm/gripper2_controller" /> -->
-        
+      args="mim_rockerb/mobile_base_controller
+            mim_arm/joint1_controller 
+            mim_arm/joint2_controller 
+            mim_arm/joint3_controller 
+            mim_arm/joint4_controller 
+            mim_arm/joint5_controller 
+            mim_arm/gripper_controller" />
+
 
 <!-- keyboard control 
   <node name="key_control" pkg="warehouse_simulation" type="key_control" respawn="false" output="screen"/>

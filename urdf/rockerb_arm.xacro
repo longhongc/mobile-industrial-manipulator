@@ -16,35 +16,21 @@
       xyz="0 0 0" />
   </joint>
 
-  <!-- <xacro:include filename="$(find mim_robots)/urdf/mim_arm.urdf"/> -->
+  <xacro:include filename="$(find mim_robots)/urdf/arm/mim_arm.urdf"/>
 
-  <!-- <joint name="car_to_arm" type="fixed"> -->
-  <!--   <origin -->
-  <!--     xyz="-0.2 0 0.281" -->
-  <!--     rpy="0 0 0" /> -->
-  <!--   <parent -->
-  <!--     link="base_link" /> -->
-  <!--   <child -->
-  <!--     link="mim_arm_base_link" /> -->
-  <!--   <axis -->
-  <!--     xyz="0 0 0" /> -->
-  <!-- </joint> -->
-
-
-  <!-- <link name="world"></link> -->
-  <!-- <joint name="world_to_arm" type="fixed"> -->
-  <!--   <origin -->
-  <!--     xyz="0 0 0" -->
-  <!--     rpy="0 0 0" /> -->
-  <!--   <parent -->
-  <!--     link="world" /> -->
-  <!--   <child -->
-  <!--     link="mim_arm_base_link" /> -->
-  <!--   <axis -->
-  <!--     xyz="0 0 0" /> -->
-  <!-- </joint> -->
+  <joint name="car_to_arm" type="fixed">
+    <origin
+      xyz="-0.2 0 0.281"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 
   <xacro:include filename="$(find mim_robots)/urdf/gazebo/rockerb_arm.gazebo"/>
   <xacro:include filename="$(find mim_robots)/urdf/rockerb/rockerb_transmission.urdf"/>
-  <!-- <xacro:include filename="$(find mim_robots)/urdf/arm_transmission.urdf"/> -->
+  <xacro:include filename="$(find mim_robots)/urdf/arm/arm_transmission.urdf"/>
 </robot>

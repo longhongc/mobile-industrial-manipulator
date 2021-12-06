@@ -3,6 +3,7 @@
   <!--ros_control plugin-->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>mim_rockerb_arm</robotNamespace>
     </plugin>
   </gazebo>
 </robot>

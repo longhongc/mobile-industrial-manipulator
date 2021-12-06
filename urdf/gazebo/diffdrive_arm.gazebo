@@ -3,7 +3,39 @@
   <!--ros_control plugin-->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/mim_diffdrive_arm</robotNamespace>
     </plugin>
+  </gazebo>
+
+  <!--Wheels-->
+  <gazebo reference="PW1">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
+  </gazebo>
+
+  <gazebo reference="PW2">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
+  </gazebo>
+  
+  <gazebo reference="C1W">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
+  </gazebo>
+
+  <gazebo reference="C2W">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
+  </gazebo>
+
+  <gazebo reference="C3W">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
+  </gazebo>
+
+  <gazebo reference="C4W">
+    <mu1>2000</mu1>
+    <mu2>1000</mu2>
   </gazebo>
 </robot>
 

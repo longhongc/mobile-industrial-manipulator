@@ -2185,7 +2185,7 @@
       <!-- </actor> -->
 
       <include>
-        <pose>0.8 0 0.784166 0 0 0</pose>
+        <pose>0.77 0 0.784166 0 0 0</pose>
         <uri>model://unit_cylinder</uri>
       </include>
 

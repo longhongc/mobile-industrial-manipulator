@@ -1,11 +1,3 @@
-##
-# @file teleop.py
-# @Brief Control the bot with wasdx key  
-# @author Chang-Hong Chen
-# @email longhongc@gmail.com
-# @version 1.0.0
-# @date 2021-10-23
-
 import time
 import signal
 import sys
@@ -30,7 +22,10 @@ class DiffdriveArmTalker:
         self.rate = rospy.Rate(10)
 
     def pick(self):
-        self.joints = [1.4, 0.3, 0.4, 0.15, -1.57]
+        self.joints = [1.42, 0.3, 0.35, 0.15, -1.52]
+
+    def place(self):
+        self.joints = [-1.57, -0.2, 1, 0.15, -1.57]
 
     def reset(self):
         self.joints = [0, 0, 0, 0, 0]
@@ -67,11 +62,17 @@ class DiffdriveArmTalker:
     def grasp(self):
         while(self.is_grasp):
             gripper_force = Float64()
-            gripper_force.data = -3
+            gripper_force.data = -5
             rospy.loginfo("Gripper Grasp")
             self.gripper1_pub.publish(gripper_force)
             self.gripper2_pub.publish(gripper_force)
 
+    def pre_place(self):
+        self.joints[2]+=0.4
+        joint_value = Float64()
+        joint_value.data = self.joints[2] 
+        self.joint3_pub.publish(joint_value)
+        time.sleep(1)
 
     def ungrasp(self):
         gripper_force = Float64()
@@ -79,6 +80,13 @@ class DiffdriveArmTalker:
         rospy.loginfo("Gripper Release")
         self.gripper1_pub.publish(gripper_force)
         self.gripper2_pub.publish(gripper_force)
+
+    def post_place(self):
+        self.joints[2]-=0.4
+        joint_value = Float64()
+        joint_value.data = self.joints[2] 
+        self.joint3_pub.publish(joint_value)
+        time.sleep(1)
 
 
 
@@ -95,34 +103,36 @@ if __name__ == "__main__":
     grasp_thread = threading.Thread(target=diffdrive_arm_pub.ungrasp)
     grasp_thread.start()
     while not rospy.is_shutdown():
-        # get user key input with enter
-        val = getch.getch() 
-        if(val=="g"):
-            diffdrive_arm_pub.is_grasp=True
-            diffdrive_arm_pub.pre_grasp()
-            grasp_thread.join()
-            grasp_thread = threading.Thread(target=diffdrive_arm_pub.grasp)
-            grasp_thread.start()
-        elif(val=="p"):
-            diffdrive_arm_pub.pick()
-        elif(val=="r"):
-            diffdrive_arm_pub.reset()
-        elif(val=="l"):
-            diffdrive_arm_pub.lift()
-        elif(val=="a"):
-            diffdrive_arm_pub.pick()
-            diffdrive_arm_pub.set_joints()
-            time.sleep(1)
-            diffdrive_arm_pub.grasp()  
-            diffdrive_arm_pub.lift()  
-        elif(val=="u"):
-            diffdrive_arm_pub.is_grasp=False
-            grasp_thread.join()
-            grasp_thread = threading.Thread(target=diffdrive_arm_pub.ungrasp)
-            grasp_thread.start()
-        else:
-            continue
+        # perform pick and place 
+        diffdrive_arm_pub.pick()
         diffdrive_arm_pub.set_joints()
-        time.sleep(0.1)
+        time.sleep(1)
+        diffdrive_arm_pub.is_grasp=True
+        diffdrive_arm_pub.pre_grasp()  
+        grasp_thread.join()
+        grasp_thread = threading.Thread(target=diffdrive_arm_pub.grasp)
+        grasp_thread.start()
+        time.sleep(1)
+        diffdrive_arm_pub.lift()  
+        time.sleep(1)
+        diffdrive_arm_pub.place()
+        diffdrive_arm_pub.set_joints()
+        time.sleep(1)
+        diffdrive_arm_pub.pre_place()  
+        diffdrive_arm_pub.is_grasp=False
+        diffdrive_arm_pub.ungrasp()  
+        time.sleep(0.5)
+        diffdrive_arm_pub.post_place()  
+        time.sleep(0.5)
+        diffdrive_arm_pub.reset()  
+        diffdrive_arm_pub.set_joints()
+
+        print("Press r to restart or e to exit")
+        val = getch.getch() 
+        if(val=="r"):
+            continue
+            time.sleep(0.1)
+        else:
+            break
 
 

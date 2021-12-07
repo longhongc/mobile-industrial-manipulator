@@ -23,7 +23,7 @@
         <geometry>
           <cylinder>
             <radius>0.0250863</radius>
-            <length>0.121569</length>
+            <length>0.0940727</length>
           </cylinder>
         </geometry>
         <material>
@@ -46,7 +46,7 @@
         <geometry>
           <cylinder>
             <radius>0.025086</radius>
-            <length>0.121569</length>
+            <length>0.094073</length>
           </cylinder>
         </geometry>
         <surface>

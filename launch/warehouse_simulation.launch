@@ -15,7 +15,8 @@
   <group ns="mim_diffdrive_arm">
     <arg name="diffdrive_init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
     <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/diffdrive_arm.xacro"/>
-    <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_diffdrive" args="$(arg diffdrive_init_pose) -param robot_description -urdf -model mim_diffdrive_arm" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_diffdrive" args="$(arg diffdrive_init_pose) -param robot_description -urdf -model mim_diffdrive_arm 
+                -J GJ1 0.04 -J GJ2 0.04"/>
 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" >
       <param name="publish_frequency" value="40.0"/>
@@ -34,12 +35,13 @@
             mim_arm/joint3_controller 
             mim_arm/joint4_controller 
             mim_arm/joint5_controller 
-            mim_arm/gripper_controller" />
+            mim_arm/gripper1_controller
+            mim_arm/gripper2_controller" />
   </group>
 
   <!-- rocker_boggie -->
   <group ns="mim_rockerb_arm">
-    <arg name="init_pose" value="-x 3 -y 4 -z 0 -R 0 -P 0 -Y 0"/>
+    <arg name="init_pose" value="-x 3 -y 5 -z 0 -R 0 -P 0 -Y 0"/>
     <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/rockerb_arm.xacro"/>
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_rockerb" args="$(arg init_pose) -param robot_description -urdf -model mim_rockerb_arm"/> 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" >
@@ -59,17 +61,15 @@
             mim_arm/joint3_controller 
             mim_arm/joint4_controller 
             mim_arm/joint5_controller 
-            mim_arm/gripper_controller" />
+            mim_arm/gripper1_controller
+            mim_arm/gripper2_controller" />
   </group>
 
   <!-- ramp -->
-  <arg name="ramp_init_pose" value="-x 4 -y 5 -z 0 -R 0 -P 0 -Y 0"/>
+  <arg name="ramp_init_pose" value="-x 3.5 -y 5.5 -z 0 -R 0 -P 0 -Y 0"/>
   <param name="ramp_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/other_models/ramp.urdf"/>
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_ramp" args="$(arg ramp_init_pose) -param ramp_description -urdf -model ramp"/> 
-
-
-
 
 
 <!-- keyboard control 

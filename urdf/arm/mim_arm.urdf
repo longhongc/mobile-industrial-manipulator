@@ -99,7 +99,7 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="30" /> 
+      velocity="15" /> 
   </joint>
   <link
     name="L2">
@@ -156,7 +156,7 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="30" />
+      velocity="15" />
   </joint>
   <link
     name="L3">
@@ -213,7 +213,7 @@
     <limit
       lower="-2" upper="2"
       effort="1000"
-      velocity="30" />
+      velocity="15" />
   </joint>
   <link
     name="L4">
@@ -270,7 +270,7 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="30" />
+      velocity="15" />
   </joint>
   <link
     name="L5">
@@ -327,7 +327,7 @@
     <limit
       lower="-2" upper="2"
       effort="1000"
-      velocity="30" />
+      velocity="15" />
   </joint>
   <link
     name="GR">

@@ -1949,30 +1949,30 @@
         </link>
       </model>
       <model name='workcell_bin_clone'>
-        <pose frame=''>4 6 0 0 -0 0</pose>
+        <pose frame=''>-1 -1 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>4 6 0 0 -0 0</pose>
+          <pose frame=''>-1 -1 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='workcell_bin_clone_0'>
-        <pose frame=''>5 6 0 0 -0 0</pose>
+        <pose frame=''> -1 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>5 6 0 0 -0 0</pose>
+          <pose frame=''>-1 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='workcell_bin_clone_1'>
-        <pose frame=''>6 6 0 0 -0 0</pose>
+        <pose frame=''>1 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>6 6 0 0 -0 0</pose>
+          <pose frame=''>1 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1989,10 +1989,10 @@
         </link>
       </model>
       <model name='workcell_bin_clone_3'>
-        <pose frame=''>8 6 0 0 -0 0</pose>
+        <pose frame=''>1 -1 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>8 6 0 0 -0 0</pose>
+          <pose frame=''>1 -1 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2014,176 +2014,180 @@
 
     <!--create moving objects -->
 
-      <actor name="actor1">
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.5 1.5 0.5</size>
-            </box>
-          </geometry>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-      <plugin name="actor_collisions_plugin" filename="libActorCollisionsPlugin.so">
-        <scaling collision="LHipJoint_LeftUpLeg_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="LeftUpLeg_LeftLeg_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="LeftLeg_LeftFoot_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="LeftFoot_LeftToeBase_collision" scale="4.0 4.0 1.5"/>
-        <scaling collision="RHipJoint_RightUpLeg_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="RightUpLeg_RightLeg_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="RightLeg_RightFoot_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="RightFoot_RightToeBase_collision" scale="4.0 4.0 1.5"/>
-        <scaling collision="LowerBack_Spine_collision" scale="12.0 20.0 5.0" pose="0.05 0 0 0 -0.2 0"/>
-        <scaling collision="Spine_Spine1_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="Neck_Neck1_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="Neck1_Head_collision" scale="5.0 5.0 3.0"/>
-        <scaling collision="LeftShoulder_LeftArm_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="LeftArm_LeftForeArm_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="LeftForeArm_LeftHand_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="LeftFingerBase_LeftHandIndex1_collision" scale="4.0 4.0 3.0"/>
-        <scaling collision="RightShoulder_RightArm_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="RightArm_RightForeArm_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="RightForeArm_RightHand_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="RightFingerBase_RightHandIndex1_collision" scale="4.0 4.0 3.0"/>
-      </plugin>
-      <skin>
-        <filename>walk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-        <static>true</static>
-        <pose>-6 -4 0 0 0 0</pose>
-        <script>
-          <loop>true</loop>
-          <delay_start>0.0</delay_start>
-          <auto_start>true</auto_start>
-          <trajectory id="0" type="walking">
-             <waypoint>
-                <time>0.0</time>
-                <pose>-6 -4 0 0 0 0</pose>
-             </waypoint>
-             <waypoint>
-                <time>25.0</time>
-                <pose>7 -4 0 0 0 0</pose>
-             </waypoint>
-             <waypoint>
-                <time>30</time>
-                <pose>7 -4 0 0 0 3.14</pose>
-             </waypoint>
-             <waypoint>
-                <time>55</time>
-                <pose>-6 -4 0 0 0 3.14</pose>
-             </waypoint>
-             <waypoint>
-                <time>60.0</time>
-                <pose>-6 -4 0 0 0 0</pose>
-             </waypoint>
-          </trajectory>
-        </script>
-      </actor>
+      <!-- <actor name="actor1"> -->
+      <!-- <link name='link'> -->
+      <!--   <inertial> -->
+      <!--     <mass>1</mass> -->
+      <!--     <inertia> -->
+      <!--       <ixx>0.166667</ixx> -->
+      <!--       <ixy>0</ixy> -->
+      <!--       <ixz>0</ixz> -->
+      <!--       <iyy>0.166667</iyy> -->
+      <!--       <iyz>0</iyz> -->
+      <!--       <izz>0.166667</izz> -->
+      <!--     </inertia> -->
+      <!--   </inertial> -->
+      <!--   <collision name='collision'> -->
+      <!--     <geometry> -->
+      <!--       <box> -->
+      <!--         <size>0.5 1.5 0.5</size> -->
+      <!--       </box> -->
+      <!--     </geometry> -->
+      <!--   </collision> -->
+      <!--   <self_collide>0</self_collide> -->
+      <!--   <kinematic>0</kinematic> -->
+      <!--   <gravity>1</gravity> -->
+      <!-- </link> -->
+      <!-- <plugin name="actor_collisions_plugin" filename="libActorCollisionsPlugin.so"> -->
+      <!--   <scaling collision="LHipJoint_LeftUpLeg_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="LeftUpLeg_LeftLeg_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="LeftLeg_LeftFoot_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="LeftFoot_LeftToeBase_collision" scale="4.0 4.0 1.5"/> -->
+      <!--   <scaling collision="RHipJoint_RightUpLeg_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="RightUpLeg_RightLeg_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="RightLeg_RightFoot_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="RightFoot_RightToeBase_collision" scale="4.0 4.0 1.5"/> -->
+      <!--   <scaling collision="LowerBack_Spine_collision" scale="12.0 20.0 5.0" pose="0.05 0 0 0 -0.2 0"/> -->
+      <!--   <scaling collision="Spine_Spine1_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="Neck_Neck1_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="Neck1_Head_collision" scale="5.0 5.0 3.0"/> -->
+      <!--   <scaling collision="LeftShoulder_LeftArm_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="LeftArm_LeftForeArm_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="LeftForeArm_LeftHand_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="LeftFingerBase_LeftHandIndex1_collision" scale="4.0 4.0 3.0"/> -->
+      <!--   <scaling collision="RightShoulder_RightArm_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="RightArm_RightForeArm_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="RightForeArm_RightHand_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="RightFingerBase_RightHandIndex1_collision" scale="4.0 4.0 3.0"/> -->
+      <!-- </plugin> -->
+      <!-- <skin> -->
+      <!--   <filename>walk.dae</filename> -->
+      <!--   <scale>1.0</scale> -->
+      <!-- </skin> -->
+      <!-- <animation name="walking"> -->
+      <!--   <filename>walk.dae</filename> -->
+      <!--   <interpolate_x>true</interpolate_x> -->
+      <!-- </animation> -->
+      <!--   <static>true</static> -->
+      <!--   <pose>-6 -4 0 0 0 0</pose> -->
+      <!--   <script> -->
+      <!--     <loop>true</loop> -->
+      <!--     <delay_start>0.0</delay_start> -->
+      <!--     <auto_start>true</auto_start> -->
+      <!--     <trajectory id="0" type="walking"> -->
+      <!--        <waypoint> -->
+      <!--           <time>0.0</time> -->
+      <!--           <pose>-6 -4 0 0 0 0</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>25.0</time> -->
+      <!--           <pose>7 -4 0 0 0 0</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>30</time> -->
+      <!--           <pose>7 -4 0 0 0 3.14</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>55</time> -->
+      <!--           <pose>-6 -4 0 0 0 3.14</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>60.0</time> -->
+      <!--           <pose>-6 -4 0 0 0 0</pose> -->
+      <!--        </waypoint> -->
+      <!--     </trajectory> -->
+      <!--   </script> -->
+      <!-- </actor> -->
+      <!--  -->
+      <!-- <actor name="actor2"> -->
+      <!-- <link name='link'> -->
+      <!--   <inertial> -->
+      <!--     <mass>1</mass> -->
+      <!--     <inertia> -->
+      <!--       <ixx>0.166667</ixx> -->
+      <!--       <ixy>0</ixy> -->
+      <!--       <ixz>0</ixz> -->
+      <!--       <iyy>0.166667</iyy> -->
+      <!--       <iyz>0</iyz> -->
+      <!--       <izz>0.166667</izz> -->
+      <!--     </inertia> -->
+      <!--   </inertial> -->
+      <!--   <collision name='collision'> -->
+      <!--     <geometry> -->
+      <!--       <box> -->
+      <!--         <size>0.5 1.5 0.5</size> -->
+      <!--       </box> -->
+      <!--     </geometry> -->
+      <!--   </collision> -->
+      <!--   <self_collide>0</self_collide> -->
+      <!--   <kinematic>0</kinematic> -->
+      <!--   <gravity>1</gravity> -->
+      <!-- </link> -->
+      <!-- <plugin name="actor_collisions_plugin" filename="libActorCollisionsPlugin.so"> -->
+      <!--   <scaling collision="LHipJoint_LeftUpLeg_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="LeftUpLeg_LeftLeg_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="LeftLeg_LeftFoot_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="LeftFoot_LeftToeBase_collision" scale="4.0 4.0 1.5"/> -->
+      <!--   <scaling collision="RHipJoint_RightUpLeg_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="RightUpLeg_RightLeg_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="RightLeg_RightFoot_collision" scale="8.0 8.0 1.0"/> -->
+      <!--   <scaling collision="RightFoot_RightToeBase_collision" scale="4.0 4.0 1.5"/> -->
+      <!--   <scaling collision="LowerBack_Spine_collision" scale="12.0 20.0 5.0" pose="0.05 0 0 0 -0.2 0"/> -->
+      <!--   <scaling collision="Spine_Spine1_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="Neck_Neck1_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="Neck1_Head_collision" scale="5.0 5.0 3.0"/> -->
+      <!--   <scaling collision="LeftShoulder_LeftArm_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="LeftArm_LeftForeArm_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="LeftForeArm_LeftHand_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="LeftFingerBase_LeftHandIndex1_collision" scale="4.0 4.0 3.0"/> -->
+      <!--   <scaling collision="RightShoulder_RightArm_collision" scale="0.01 0.001 0.001"/> -->
+      <!--   <scaling collision="RightArm_RightForeArm_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="RightForeArm_RightHand_collision" scale="5.0 5.0 1.0"/> -->
+      <!--   <scaling collision="RightFingerBase_RightHandIndex1_collision" scale="4.0 4.0 3.0"/> -->
+      <!-- </plugin> -->
+      <!-- <skin> -->
+      <!--   <filename>walk.dae</filename> -->
+      <!--   <scale>1.0</scale> -->
+      <!-- </skin> -->
+      <!-- <animation name="walking"> -->
+      <!--   <filename>walk.dae</filename> -->
+      <!--   <interpolate_x>true</interpolate_x> -->
+      <!-- </animation> -->
+      <!--   <static>true</static> -->
+      <!--   <pose>7 4 0 0 0 3.14</pose> -->
+      <!--   <script> -->
+      <!--     <loop>true</loop> -->
+      <!--     <delay_start>0.0</delay_start> -->
+      <!--     <auto_start>true</auto_start> -->
+      <!--     <trajectory id="0" type="walking"> -->
+      <!--        <waypoint> -->
+      <!--           <time>0.0</time> -->
+      <!--           <pose>7 4 0 0 0 3.14</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>45.0</time> -->
+      <!--           <pose>-6 4 0 0 0 3.14</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>50</time> -->
+      <!--           <pose>-6 4 0 0 0 0</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>75</time> -->
+      <!--           <pose>7 4 0 0 0 0</pose> -->
+      <!--        </waypoint> -->
+      <!--        <waypoint> -->
+      <!--           <time>80.0</time> -->
+      <!--           <pose>7 4 0 0 0 3.14</pose> -->
+      <!--        </waypoint> -->
+      <!--     </trajectory> -->
+      <!--   </script> -->
+      <!-- </actor> -->
 
-      <actor name="actor2">
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.5 1.5 0.5</size>
-            </box>
-          </geometry>
-        </collision>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-      <plugin name="actor_collisions_plugin" filename="libActorCollisionsPlugin.so">
-        <scaling collision="LHipJoint_LeftUpLeg_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="LeftUpLeg_LeftLeg_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="LeftLeg_LeftFoot_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="LeftFoot_LeftToeBase_collision" scale="4.0 4.0 1.5"/>
-        <scaling collision="RHipJoint_RightUpLeg_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="RightUpLeg_RightLeg_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="RightLeg_RightFoot_collision" scale="8.0 8.0 1.0"/>
-        <scaling collision="RightFoot_RightToeBase_collision" scale="4.0 4.0 1.5"/>
-        <scaling collision="LowerBack_Spine_collision" scale="12.0 20.0 5.0" pose="0.05 0 0 0 -0.2 0"/>
-        <scaling collision="Spine_Spine1_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="Neck_Neck1_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="Neck1_Head_collision" scale="5.0 5.0 3.0"/>
-        <scaling collision="LeftShoulder_LeftArm_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="LeftArm_LeftForeArm_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="LeftForeArm_LeftHand_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="LeftFingerBase_LeftHandIndex1_collision" scale="4.0 4.0 3.0"/>
-        <scaling collision="RightShoulder_RightArm_collision" scale="0.01 0.001 0.001"/>
-        <scaling collision="RightArm_RightForeArm_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="RightForeArm_RightHand_collision" scale="5.0 5.0 1.0"/>
-        <scaling collision="RightFingerBase_RightHandIndex1_collision" scale="4.0 4.0 3.0"/>
-      </plugin>
-      <skin>
-        <filename>walk.dae</filename>
-        <scale>1.0</scale>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-        <static>true</static>
-        <pose>7 4 0 0 0 3.14</pose>
-        <script>
-          <loop>true</loop>
-          <delay_start>0.0</delay_start>
-          <auto_start>true</auto_start>
-          <trajectory id="0" type="walking">
-             <waypoint>
-                <time>0.0</time>
-                <pose>7 4 0 0 0 3.14</pose>
-             </waypoint>
-             <waypoint>
-                <time>45.0</time>
-                <pose>-6 4 0 0 0 3.14</pose>
-             </waypoint>
-             <waypoint>
-                <time>50</time>
-                <pose>-6 4 0 0 0 0</pose>
-             </waypoint>
-             <waypoint>
-                <time>75</time>
-                <pose>7 4 0 0 0 0</pose>
-             </waypoint>
-             <waypoint>
-                <time>80.0</time>
-                <pose>7 4 0 0 0 3.14</pose>
-             </waypoint>
-          </trajectory>
-        </script>
-      </actor>
+      <include>
+        <pose>0.8 0 0.784166 0 0 0</pose>
+        <uri>model://unit_cylinder</uri>
+      </include>
 
-      
   </world>
 </sdf>

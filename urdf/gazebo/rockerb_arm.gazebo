@@ -6,5 +6,39 @@
       <robotNamespace>mim_rockerb_arm</robotNamespace>
     </plugin>
   </gazebo>
+
+  <gazebo reference="G2">
+    <mu1>1000</mu1>
+    <mu2>1000</mu2>
+    <kp>1000000.0</kp>
+    <kd>100000.0</kd>
+    <slip1>0</slip1>
+    <slip2>0</slip2>
+    <minDepth>0.001</minDepth>
+    <maxVel>0</maxVel>
+    <torsional>
+        <ode>
+            <coefficient>1000</coefficient>
+            <slip>0</slip>
+        </ode>
+    </torsional>
+  </gazebo>
+
+  <gazebo reference="G1">
+    <mu1>1000</mu1>
+    <mu2>1000</mu2>
+    <kp>1000000.0</kp>
+    <kd>100000.0</kd>
+    <slip1>0</slip1>
+    <slip2>0</slip2>
+    <minDepth>0.001</minDepth>
+    <maxVel>0</maxVel>
+    <torsional>
+        <ode>
+            <coefficient>1000</coefficient>
+            <slip>0</slip>
+        </ode>
+    </torsional>
+  </gazebo>
 </robot>
 

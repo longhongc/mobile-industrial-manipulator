@@ -13,7 +13,7 @@ class MIM_Arm:
     a2 = -0.6121
     d2 = -0.12781
     a3 = -0.5722
-    d3 = 0.12781
+    d3 = 0.1157
     d4 = 0.1157
     a4 = 0.0912
 
@@ -71,6 +71,7 @@ class MIM_Arm:
         config_3 = [0, 0, 0, math.pi/2, 0] 
         config_4 = [0, 0, math.pi/2, 0, 0] 
         config_5 = [0, 0, math.pi/2, -math.pi/2, math.pi/2] 
+        diffdrive_pick_config = [1.42, 0.3, 0.75, 0.15, -1.52]
     
         print("== test1 ==")
         print(self.forward_kinematic(config_1))
@@ -82,6 +83,8 @@ class MIM_Arm:
         print(self.forward_kinematic(config_4))
         print("== test5 ==")
         print(self.forward_kinematic(config_5))
+        print("== test6 ==")
+        print(self.forward_kinematic(diffdrive_pick_config))
 
 
 def main():

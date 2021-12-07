@@ -14,7 +14,7 @@
   <!-- diffdrive -->
   <group ns="mim_diffdrive_arm">
     <arg name="diffdrive_init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
-    <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/diffdrive_arm.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro $(find mim_robots)/urdf/diffdrive_arm.xacro dummy_link:=world" />
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model_diffdrive" args="$(arg diffdrive_init_pose) -param robot_description -urdf -model mim_diffdrive_arm 
                 -J GJ1 0.04 -J GJ2 0.04"/>
 

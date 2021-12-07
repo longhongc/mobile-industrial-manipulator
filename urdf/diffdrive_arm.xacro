@@ -3,13 +3,15 @@
 <robot name="mim_diffdrive_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find mim_robots)/urdf/diffdrive/mim_diffdrive.urdf"/>
 
-  <link name="world"></link>
+  <xacro:arg name="dummy_link" default="dummy_link"/>
+
+  <link name="$(arg dummy_link)"></link>
   <joint name="dummy_to_car" type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
-      link="world" />
+      link="$(arg dummy_link)" />
     <child
       link="base_link" />
     <axis

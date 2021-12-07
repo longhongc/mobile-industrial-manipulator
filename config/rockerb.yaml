@@ -45,14 +45,5 @@ mim_rockerb:
           has_jerk_limits        : true
           max_jerk               : 2.5  # rad/s^3  
 
-  # joint_state_controller:
-  #   type: joint_state_controller/JointStateController
-  #   publish_rate: 50
-  #   extra_joints:
-  #     - name: 'WRL_J'
-  #
-  #     - name: 'WRR_J'
-  #
-
 
  

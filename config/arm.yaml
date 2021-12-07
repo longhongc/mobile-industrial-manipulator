@@ -50,17 +50,3 @@ mim_arm:  # change the name
     #     GJ2: {p: 10, i: 1.0, d: 0.0}
     #
 
-
-  # Publish all joint states -----------------------------------
-  # joint_state_controller:
-  #   type: joint_state_controller/JointStateController
-  #   publish_rate: 50
-  #
-  # zeros:
-  #     'J01': 0
-  #     'J12': 1.57
-  #     'J23': -1.57
-  #     'J34': 1.57
-  #     'J45': 0
-  #     'GJ1': 0
-  #     'GJ2': 0

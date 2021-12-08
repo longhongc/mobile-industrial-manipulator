@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ramp/meshes/base_link.STL" />
+          filename="package://mim_robots/meshes/ramp/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -54,7 +54,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://ramp/meshes/base_link.STL" />
+          filename="package://mim_robots/meshes/ramp/base_link.STL" />
       </geometry>
     </collision>
   </link>

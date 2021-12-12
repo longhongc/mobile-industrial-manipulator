@@ -1,12 +1,14 @@
 # Mobile Industrial Manipulators (MIM)
 This package implements different kinds of mobile manipulator that can be used in an industrial environment.  
 It also demonstrate the pick and place of the mobile manipulators. 
+<img src=videos/warehouse_simulation.jpg width="500" height="350" /> 
 
 Robots:  
 1. Differential drive mobile manipulator
-2. Differential drive mobile manipulator with rocker-boggie structure
+2. Differential drive mobile manipulator with rocker-boggie structure  
+   <img src=videos/rocker-boggie.png width="200" height="150" /> 
 
-<img src=videos/warehouse_simulation.jpg width="500" height="350" /> 
+
 
 Authors: Chang-Hong Chen, Sparsh Jaiswal
 
@@ -43,8 +45,12 @@ python3 diffdrive_pick_place.py
 roslaunch mim_robots test_ramp.launch
 ```
 run test ramp to show the advantage of rocker-boogie   
-(Down: ordinary differential drive, Up: rocker-boggie)  
-<img src=videos/ramp_test.gif width="500" height="350" />   
+(Down: ordinary differential drive, Up: rocker-boggie) 
+<p float="left">
+<img src=videos/ramp_test.gif width="500" height="350" />  
+<img src=videos/base_design.png width="350" height="400" />  
+</p>  
+
 ```
 cd scripts
 python3 test_ramp.py

@@ -1,6 +1,6 @@
 # Mobile Industrial Manipulators (MIM)
 This package implements different kinds of mobile manipulator that can be used in an industrial environment.  
-It also demonstrate the pick and place of the mobile manipulators. 
+It also demonstrate the pick and place of the mobile manipulators.   
 <img src=videos/warehouse_simulation.jpg width="500" height="350" /> 
 
 Robots:  

@@ -33,7 +33,8 @@
             mim_arm/joint3_controller 
             mim_arm/joint4_controller 
             mim_arm/joint5_controller 
-            mim_arm/grippe1_controller
-            mim_arm/grippe2_controller" />
+            mim_arm/joint6_controller 
+            mim_arm/gripper1_controller
+            mim_arm/gripper2_controller" />
 
 </launch>

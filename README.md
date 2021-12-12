@@ -47,8 +47,8 @@ roslaunch mim_robots test_ramp.launch
 run test ramp to show the advantage of rocker-boogie   
 (Down: ordinary differential drive, Up: rocker-boggie) 
 <p float="left">
-<img src=videos/ramp_test.gif width="500" height="350" />  
-<img src=videos/base_design.png width="350" height="400" />  
+<img src=videos/ramp_test.gif width="450" height="300" />  
+<img src=videos/base_design.png width="350" height="300" />  
 </p>  
 
 ```

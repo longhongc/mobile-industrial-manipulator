@@ -1,11 +1,30 @@
 # Mobile Industrial Manipulators (MIM)
-This package implements different kinds mobile manipulators that can be used in an industrial environment.  
+This package implements different kinds of mobile manipulator that can be used in an industrial environment.  
+It also demonstrate the pick and place of the mobile manipulators. 
 
-Robots:
+Robots:  
 1. Differential drive mobile manipulator
 2. Differential drive mobile manipulator with rocker-boggie structure
 
+<img src=videos/warehouse_simulation.jpg width="500" height="350" /> 
+
 Authors: Chang-Hong Chen, Sparsh Jaiswal
+
+## Environment
+Ubuntu 20.04  
+ROS Noetic  
+
+## Dependencies
+### ROS Packages
+ros-control  
+ros-controller  
+```
+sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
+```
+### Python Library
+```
+pip3 install queue
+```
 
 ## Run
 ### Warehouse Simulation
@@ -13,7 +32,8 @@ launch the differential drive robot and the roker-boggie robot
 ```
 roslaunch mim_robots warehouse_simulation.launch
 ```
-run pick and place on the differential drive robot
+run pick and place on the differential drive robot  
+<img src=videos/pick_and_place_tuned.gif width="500" height="350" />   
 ```
 cd scripts
 python3 diffdrive_pick_place.py
@@ -22,7 +42,9 @@ python3 diffdrive_pick_place.py
 ```
 roslaunch mim_robots test_ramp.launch
 ```
-run test ramp to show the advantage of rocker-boogie
+run test ramp to show the advantage of rocker-boogie   
+(Down: ordinary differential drive, Up: rocker-boggie)  
+<img src=videos/ramp_test.gif width="500" height="350" />   
 ```
 cd scripts
 python3 test_ramp.py

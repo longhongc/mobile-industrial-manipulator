@@ -2,18 +2,19 @@
 <package format="2">
   <name>mim_robots</name>
   <version>0.0.0</version>
-  <description>The mim_robots package</description>
+  <description>Mobile industrial manipulator design and control</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="longhongc@todo.todo">longhongc</maintainer>
+  <maintainer email="longhongc@gmail.com">Chang-Hong Chen</maintainer>
+  <maintainer email="sjaiswal@umd.edu">Sparsh Jaiswal</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
   <!-- Commonly used license strings: -->
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
+  <license>BSDv3</license>
 
 
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
@@ -49,6 +50,9 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>roslaunch</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>ros_control</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

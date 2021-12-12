@@ -34,7 +34,7 @@ def main():
         diffdrive_pub.publish(diffdrive_vel)
         rockerb_pub.publish(rockerb_vel)
         t1 = rospy.Time.now().to_sec()
-        if(t1-t0) > 5:
+        if(t1-t0) > 10:
             print("finish")
             break
         rate.sleep()

@@ -9,8 +9,8 @@
 
   <!--Wheels-->
   <gazebo reference="P1">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
     <kp>1000000.0</kp>
     <kd>100000.0</kd>
     <slip1>0</slip1>
@@ -26,8 +26,8 @@
   </gazebo>
 
   <gazebo reference="P2">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
     <kp>1000000.0</kp>
     <kd>100000.0</kd>
     <slip1>0</slip1>
@@ -43,23 +43,23 @@
   </gazebo>
   
   <gazebo reference="C1">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
   </gazebo>
 
   <gazebo reference="C2">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
   </gazebo>
 
   <gazebo reference="C3">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
   </gazebo>
 
   <gazebo reference="C4">
-    <mu1>2000</mu1>
-    <mu2>1000</mu2>
+    <mu1>500</mu1>
+    <mu2>500</mu2>
   </gazebo>
 
   <gazebo reference="G2">

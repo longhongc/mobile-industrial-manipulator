@@ -8,16 +8,16 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-2.20799811772935E-15 -0.00101374975809105 0.212277859061032"
+        xyz="-3.9620615595323E-15 -0.00101374975806221 0.172677436190927"
         rpy="0 0 0" />
       <mass
         value="33.5973988123837" />
       <inertia
         ixx="1.01936792689011"
-        ixy="-2.87646051602348E-07"
-        ixz="-3.0761567096847E-16"
+        ixy="-2.87646047555418E-07"
+        ixz="-4.13322576029007E-16"
         iyy="2.14070538797161"
-        iyz="4.23705224594669E-16"
+        iyz="-2.66613602788427E-16"
         izz="3.05624852691436" />
     </inertial>
     <visual>
@@ -26,12 +26,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/base_link.STL" />
+            filename="package://mim_robots/meshes/diffdrive/base_link.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 0.5" />
       </material>
     </visual>
     <collision>
@@ -40,25 +40,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/base_link.STL" />
+            filename="package://mim_robots/meshes/diffdrive/base_link.STL" />
       </geometry>
     </collision>
   </link>
   <link
-    name="PW1">
+    name="P1">
     <inertial>
       <origin
-        xyz="6.93889390390723E-16 2.019218126037E-15 -0.00999999999999998"
+        xyz="6.93889390390723E-16 2.01722204816701E-15 0"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0720898510112747" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="-1.39270131587091E-52"
-        ixz="-2.44290946982965E-34"
-        iyy="1.74803544962354E-05"
-        iyz="8.83998436242655E-37"
-        izz="3.31776708089229E-05" />
+        ixx="3.02016940016694E-05"
+        ixy="7.59325952929537E-23"
+        ixz="1.25511395674995E-22"
+        iyy="3.02016940016694E-05"
+        iyz="4.07470980183427E-23"
+        izz="5.57490232813793E-05" />
     </inertial>
     <visual>
       <origin
@@ -66,12 +66,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/PW1.STL" />
+            filename="package://mim_robots/meshes/diffdrive/P1.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+          rgba="1 1 1 0.2" />
       </material>
     </visual>
     <collision>
@@ -80,38 +80,38 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/PW1.STL" />
+            filename="package://mim_robots/meshes/diffdrive/P1.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="PW1_J"
+    name="P1_J"
     type="continuous">
     <origin
-      xyz="0 -0.200513749758132 0.0375000000000016"
+      xyz="0 -0.210513749758133 0.0375000000000007"
       rpy="1.57079632679489 1.5707963267949 0" />
     <parent
       link="base_link" />
     <child
-      link="PW1" />
+      link="P1" />
     <axis
       xyz="0 0 1" />
   </joint>
   <link
-    name="PW2">
+    name="P2">
     <inertial>
       <origin
-        xyz="7.49400541621981E-16 -4.37497260641351E-15 0.00999999999999998"
+        xyz="7.63278329429795E-16 -4.37692422136912E-15 5.55111512312578E-17"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0720898510112747" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="-7.58567881730871E-36"
-        ixz="-2.44357068540199E-34"
-        iyy="1.74803544962354E-05"
-        iyz="4.84891419714193E-37"
-        izz="3.31776708089229E-05" />
+        ixx="3.02016940016694E-05"
+        ixy="3.39273298117377E-23"
+        ixz="1.25511395674995E-22"
+        iyy="3.02016940016694E-05"
+        iyz="4.07470980183422E-23"
+        izz="5.57490232813793E-05" />
     </inertial>
     <visual>
       <origin
@@ -119,12 +119,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/PW2.STL" />
+            filename="package://mim_robots/meshes/diffdrive/P2.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+          rgba="1 1 1 0.2" />
       </material>
     </visual>
     <collision>
@@ -133,20 +133,20 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/PW2.STL" />
+            filename="package://mim_robots/meshes/diffdrive/P2.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="PW2_J"
+    name="P2_J"
     type="continuous">
     <origin
-      xyz="0 0.198486250241876 0.0374999999999999"
+      xyz="0 0.208486250241876 0.0375000000000008"
       rpy="1.57079632679489 1.5707963267949 0" />
     <parent
       link="base_link" />
     <child
-      link="PW2" />
+      link="P2" />
     <axis
       xyz="0 0 1" />
   </joint>
@@ -154,17 +154,17 @@
     name="C1">
     <inertial>
       <origin
-        xyz="-0.00657113223306066 -0.0285143133296709 -8.33960520085775E-09"
+        xyz="-0.00692686642669293 0.0635846418066491 -8.13409695155087E-09"
         rpy="0 0 0" />
       <mass
-        value="0.133845469700625" />
+        value="0.13722708003295" />
       <inertia
-        ixx="9.89825054141292E-05"
-        ixy="-1.89872436567926E-05"
-        ixz="7.537355636018E-12"
-        iyy="4.2469650939329E-05"
-        iyz="2.22958763736225E-11"
-        izz="9.72073954309255E-05" />
+        ixx="9.93129843108459E-05"
+        ixy="-1.89872436567927E-05"
+        ixz="7.53735556825536E-12"
+        iyy="4.28001298360455E-05"
+        iyz="2.2295876374046E-11"
+        izz="9.72152613506116E-05" />
     </inertial>
     <visual>
       <origin
@@ -172,7 +172,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C1.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C1.STL" />
       </geometry>
       <material
         name="">
@@ -186,7 +186,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C1.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C1.STL" />
       </geometry>
     </collision>
   </link>
@@ -194,15 +194,14 @@
     name="C1_J"
     type="continuous">
     <origin
-      xyz="0.337499999999999 -0.178513749758133 0.124000000000001"
-      rpy="1.57079632679489 0 0.0264866109494407" />
+      xyz="0.337499999999999 -0.178513749758134 0.0304721359549996"
+      rpy="1.5707963267949 0 0.0264866109494407" />
     <parent
       link="base_link" />
     <child
       link="C1" />
     <axis
       xyz="0 1 0" />
-    <dynamics friction="0.7" />
   </joint>
   <link
     name="C1W">
@@ -211,14 +210,14 @@
         xyz="0 0 -5.55111512312578E-17"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0741004703095722" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="5.14525307313489E-23"
-        ixz="1.23325569560236E-21"
-        iyy="1.75243625248463E-05"
-        iyz="8.29982673807421E-07"
-        izz="3.3133662780312E-05" />
+        ixx="3.02888208379289E-05"
+        ixy="3.14965690309587E-22"
+        ixz="2.24283535816781E-21"
+        iyy="3.03603122293902E-05"
+        iyz="1.34831343534886E-06"
+        izz="5.57177442758839E-05" />
     </inertial>
     <visual>
       <origin
@@ -226,7 +225,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C1W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C1W.STL" />
       </geometry>
       <material
         name="">
@@ -240,7 +239,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C1W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C1W.STL" />
       </geometry>
     </collision>
   </link>
@@ -248,7 +247,7 @@
     name="C1W_J"
     type="continuous">
     <origin
-      xyz="-0.0210069660112502 -0.0865 0"
+      xyz="-0.0210069660112502 0.00702786404500044 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C1" />
@@ -261,17 +260,17 @@
     name="C2">
     <inertial>
       <origin
-        xyz="-0.00657113223306055 -0.0285143133296707 -8.3396052563689E-09"
+        xyz="-0.00692686642669288 0.0635846418066492 -8.13409700706202E-09"
         rpy="0 0 0" />
       <mass
-        value="0.133845469700627" />
+        value="0.137227080032951" />
       <inertia
-        ixx="9.89825054141297E-05"
-        ixy="-1.89872436567927E-05"
-        ixz="7.53735573194448E-12"
-        iyy="4.24696509393292E-05"
-        iyz="2.22958766818366E-11"
-        izz="9.7207395430926E-05" />
+        ixx="9.93129843108462E-05"
+        ixy="-1.89872436567928E-05"
+        ixz="7.53735566248778E-12"
+        iyy="4.28001298360458E-05"
+        iyz="2.22958766821542E-11"
+        izz="9.7215261350612E-05" />
     </inertial>
     <visual>
       <origin
@@ -279,7 +278,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C2.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C2.STL" />
       </geometry>
       <material
         name="">
@@ -293,7 +292,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C2.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C2.STL" />
       </geometry>
     </collision>
   </link>
@@ -301,31 +300,30 @@
     name="C2_J"
     type="continuous">
     <origin
-      xyz="0.337500000000001 0.176486250241866 0.123999999999999"
-      rpy="1.57079632679489 0 0.0264866109494407" />
+      xyz="0.337500000000001 0.176486250241866 0.0304721359549995"
+      rpy="1.5707963267949 0 0.0264866109494407" />
     <parent
       link="base_link" />
     <child
       link="C2" />
     <axis
       xyz="0 1 0" />
-    <dynamics friction="0.7" />
   </joint>
   <link
     name="C2W">
     <inertial>
       <origin
-        xyz="0 -5.55111512312578E-17 0"
+        xyz="-1.38777878078145E-17 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0741004703095722" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="6.70982601326168E-23"
-        ixz="1.50398684371662E-21"
-        iyy="1.75243625248463E-05"
-        iyz="8.29982673807421E-07"
-        izz="3.3133662780312E-05" />
+        ixx="3.02888208379289E-05"
+        ixy="6.63178656109087E-22"
+        ixz="1.96617885959453E-21"
+        iyy="3.03603122293902E-05"
+        iyz="1.34831343534886E-06"
+        izz="5.57177442758839E-05" />
     </inertial>
     <visual>
       <origin
@@ -333,7 +331,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C2W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C2W.STL" />
       </geometry>
       <material
         name="">
@@ -347,7 +345,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C2W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C2W.STL" />
       </geometry>
     </collision>
   </link>
@@ -355,7 +353,7 @@
     name="C2W_J"
     type="continuous">
     <origin
-      xyz="-0.0210069660112502 -0.0865 0"
+      xyz="-0.0210069660112502 0.00702786404500046 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C2" />
@@ -368,17 +366,17 @@
     name="C3">
     <inertial>
       <origin
-        xyz="-0.00657113223306055 -0.0285143133296708 -8.33960522861332E-09"
+        xyz="-0.00692686642669288 0.063584641806649 -8.13409700706202E-09"
         rpy="0 0 0" />
       <mass
-        value="0.133845469700626" />
+        value="0.137227080032949" />
       <inertia
-        ixx="9.89825054141295E-05"
-        ixy="-1.89872436567928E-05"
-        ixz="7.53735573914426E-12"
-        iyy="4.24696509393292E-05"
-        iyz="2.22958765688636E-11"
-        izz="9.7207395430926E-05" />
+        ixx="9.93129843108455E-05"
+        ixy="-1.89872436567925E-05"
+        ixz="7.53735562119492E-12"
+        iyy="4.28001298360454E-05"
+        iyz="2.22958765094654E-11"
+        izz="9.72152613506112E-05" />
     </inertial>
     <visual>
       <origin
@@ -386,7 +384,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C3.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C3.STL" />
       </geometry>
       <material
         name="">
@@ -400,7 +398,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C3.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C3.STL" />
       </geometry>
     </collision>
   </link>
@@ -408,31 +406,30 @@
     name="C3_J"
     type="continuous">
     <origin
-      xyz="-0.337499999999999 0.176486250241869 0.123999999999999"
-      rpy="1.57079632679489 0 0.0264866109494407" />
+      xyz="-0.337500000000001 -0.178513749758132 0.0304699999999996"
+      rpy="1.5707963267949 0 0.0264866109494407" />
     <parent
       link="base_link" />
     <child
       link="C3" />
     <axis
       xyz="0 1 0" />
-    <dynamics friction="0.7" />
   </joint>
   <link
     name="C3W">
     <inertial>
       <origin
-        xyz="0 0 -5.55111512312578E-17"
+        xyz="0 -5.55111512312578E-17 -2.4980018054066E-16"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0741004703095722" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="6.70982601325397E-23"
-        ixz="1.50398684371664E-21"
-        iyy="1.75243625248463E-05"
-        iyz="8.29982673807421E-07"
-        izz="3.3133662780312E-05" />
+        ixx="3.02888208379289E-05"
+        ixy="7.32766140857079E-22"
+        ixz="1.98493494221899E-21"
+        iyy="3.03603122293902E-05"
+        iyz="1.34831343534886E-06"
+        izz="5.57177442758839E-05" />
     </inertial>
     <visual>
       <origin
@@ -440,12 +437,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C3W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C3W.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+          rgba="1 1 1 0.2" />
       </material>
     </visual>
     <collision>
@@ -454,7 +451,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C3W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C3W.STL" />
       </geometry>
     </collision>
   </link>
@@ -462,7 +459,7 @@
     name="C3W_J"
     type="continuous">
     <origin
-      xyz="-0.02100696601125 -0.0865 0"
+      xyz="-0.02100696601125 0.00702786404500066 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C3" />
@@ -475,17 +472,17 @@
     name="C4">
     <inertial>
       <origin
-        xyz="-0.00657113223306061 -0.0285143133296709 -8.33960522861332E-09"
+        xyz="-0.00692686642669288 0.0635846418066492 -8.13409697930645E-09"
         rpy="0 0 0" />
       <mass
-        value="0.133845469700625" />
+        value="0.13722708003295" />
       <inertia
-        ixx="9.89825054141289E-05"
-        ixy="-1.89872436567925E-05"
-        ixz="7.53735568789876E-12"
-        iyy="4.24696509393288E-05"
-        iyz="2.22958765092536E-11"
-        izz="9.72073954309252E-05" />
+        ixx="9.93129843108461E-05"
+        ixy="-1.89872436567929E-05"
+        ixz="7.53735567222865E-12"
+        iyy="4.28001298360458E-05"
+        iyz="2.22958765633579E-11"
+        izz="9.72152613506121E-05" />
     </inertial>
     <visual>
       <origin
@@ -493,7 +490,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C4.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C4.STL" />
       </geometry>
       <material
         name="">
@@ -507,7 +504,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C4.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C4.STL" />
       </geometry>
     </collision>
   </link>
@@ -515,31 +512,30 @@
     name="C4_J"
     type="continuous">
     <origin
-      xyz="-0.337500000000001 -0.178513749758131 0.123997864045001"
-      rpy="1.57079632679489 0 0.0264866109494407" />
+      xyz="-0.337499999999999 0.176486250241868 0.0304721359549995"
+      rpy="1.5707963267949 0 0.0264866109494407" />
     <parent
       link="base_link" />
     <child
       link="C4" />
     <axis
       xyz="0 1 0" />
-    <dynamics friction="0.7" />
   </joint>
   <link
     name="C4W">
     <inertial>
       <origin
-        xyz="0 -5.55111512312578E-17 -2.22044604925031E-16"
+        xyz="-1.38777878078145E-17 0 -8.32667268468867E-17"
         rpy="0 0 0" />
       <mass
-        value="0.0290199529351017" />
+        value="0.0741004703095722" />
       <inertia
-        ixx="1.74803544962354E-05"
-        ixy="6.70982601325397E-23"
-        ixz="1.50398684371664E-21"
-        iyy="1.75243625248463E-05"
-        iyz="8.29982673807422E-07"
-        izz="3.3133662780312E-05" />
+        ixx="3.02888208379289E-05"
+        ixy="1.74181515086185E-21"
+        ixz="2.2504232470915E-21"
+        iyy="3.03603122293902E-05"
+        iyz="1.34831343534886E-06"
+        izz="5.57177442758839E-05" />
     </inertial>
     <visual>
       <origin
@@ -547,12 +543,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C4W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C4W.STL" />
       </geometry>
       <material
         name="">
         <color
-          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+          rgba="1 1 1 0.2" />
       </material>
     </visual>
     <collision>
@@ -561,7 +557,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/C4W.STL" />
+            filename="package://mim_robots/meshes/diffdrive/C4W.STL" />
       </geometry>
     </collision>
   </link>
@@ -569,7 +565,7 @@
     name="C4W_J"
     type="continuous">
     <origin
-      xyz="-0.02100696601125 -0.0864999999999998 0"
+      xyz="-0.02100696601125 0.00702786404500043 0"
       rpy="-3.0886194316909 0 -1.5707963267949" />
     <parent
       link="C4" />
@@ -582,17 +578,17 @@
     name="LIDAR">
     <inertial>
       <origin
-        xyz="0.0121635546480126 -0.0287648885617243 0.000482127716282299"
+        xyz="0.0121635550237251 -0.0287648885700504 0.000482127519639952"
         rpy="0 0 0" />
       <mass
-        value="0.0730843683225071" />
+        value="0.0730843682728084" />
       <inertia
-        ixx="1.9581193027534E-05"
-        ixy="-4.28353442325277E-07"
-        ixz="1.03773440001469E-07"
-        iyy="4.14178206744278E-05"
-        iyz="-9.42533290571976E-09"
-        izz="2.41241313339889E-05" />
+        ixx="1.9581192847151E-05"
+        ixy="-4.28353557726989E-07"
+        ixz="1.03772853897536E-07"
+        iyy="4.14178195715931E-05"
+        iyz="-9.42526989362686E-09"
+        izz="2.41241304679093E-05" />
     </inertial>
     <visual>
       <origin
@@ -600,7 +596,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/LIDAR.STL" />
+            filename="package://mim_robots/meshes/diffdrive/LIDAR.STL" />
       </geometry>
       <material
         name="">
@@ -614,7 +610,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://mim_robots/meshes/diffdrive/LIDAR.STL" />
+            filename="package://mim_robots/meshes/diffdrive/LIDAR.STL" />
       </geometry>
     </collision>
   </link>
@@ -622,7 +618,7 @@
     name="LIDAR_J"
     type="fixed">
     <origin
-      xyz="0.321103295710635 -0.000963772085925339 0.384500000000008"
+      xyz="0.321103295710635 -0.000963772085875598 0.374500000000008"
       rpy="1.57079632679489 0 -3.14159265358979" />
     <parent
       link="base_link" />

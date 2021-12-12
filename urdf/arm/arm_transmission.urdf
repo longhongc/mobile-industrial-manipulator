@@ -56,6 +56,18 @@
     </actuator>
   </transmission>   
 
+  <transmission name="J6_T">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J6">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="J6_M">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>5</mechanicalReduction>
+    </actuator>
+  </transmission>   
+
+
   <transmission name="GJ1_T">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="GJ1">

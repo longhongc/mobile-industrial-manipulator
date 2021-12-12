@@ -7,9 +7,10 @@
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find mim_robots)/worlds/warehouse.world"/>
-    <arg name="paused" value="true"/>
+    <arg name="paused" value="false"/>
     <arg name="gui" value="true"/> 
   </include>
+
 
   <!-- diffdrive -->
   <group ns="mim_diffdrive_arm">
@@ -27,6 +28,7 @@
     <rosparam command="load" 
       file="$(find mim_robots)/config/arm.yaml"/>
 
+
     <node name="diffdrive_controller_manager" pkg="controller_manager" type="spawner"
       respawn="false" output="screen" 
       args="mim_diffdrive/mobile_base_controller
@@ -35,6 +37,7 @@
             mim_arm/joint3_controller 
             mim_arm/joint4_controller 
             mim_arm/joint5_controller 
+            mim_arm/joint6_controller 
             mim_arm/gripper1_controller
             mim_arm/gripper2_controller" />
   </group>
@@ -53,6 +56,7 @@
     <rosparam command="load" 
       file="$(find mim_robots)/config/arm.yaml"/>
 
+
     <node name="rockerb_controller_manager" pkg="controller_manager" type="spawner"
       respawn="false" output="screen"  
       args="mim_rockerb/mobile_base_controller
@@ -61,6 +65,7 @@
             mim_arm/joint3_controller 
             mim_arm/joint4_controller 
             mim_arm/joint5_controller 
+            mim_arm/joint6_controller 
             mim_arm/gripper1_controller
             mim_arm/gripper2_controller" />
   </group>

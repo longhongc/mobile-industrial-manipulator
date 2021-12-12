@@ -2185,8 +2185,27 @@
       <!-- </actor> -->
 
       <include>
-        <pose>0.77 0 0.784166 0 0 0</pose>
+        <pose>0.745 0 0.784166 0 0 0</pose>
         <uri>model://unit_cylinder</uri>
+        <collision name='collision'>
+          <surface>
+            <friction>
+              <minDepth>0.001</minDepth>
+              <ode>
+                <mu>1000</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+        </collision>
+
       </include>
 
   </world>

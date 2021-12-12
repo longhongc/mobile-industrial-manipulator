@@ -99,7 +99,7 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="15" /> 
+      velocity="1" /> 
   </joint>
   <link
     name="L2">
@@ -156,7 +156,8 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="15" />
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link
     name="L3">
@@ -213,7 +214,8 @@
     <limit
       lower="-2" upper="2"
       effort="1000"
-      velocity="15" />
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link
     name="L4">
@@ -270,7 +272,7 @@
     <limit
       lower="-2" upper="2"
       effort="500"
-      velocity="15" />
+      velocity="1" />
   </joint>
   <link
     name="L5">
@@ -327,7 +329,7 @@
     <limit
       lower="-2" upper="2"
       effort="1000"
-      velocity="15" />
+      velocity="1" />
   </joint>
   <link
     name="GR">
@@ -371,7 +373,7 @@
   </link>
   <joint
     name="J6"
-    type="fixed">
+    type="continuous">
     <origin
       xyz="0.0912 0.0578499999999997 0"
       rpy="0 0 0" />
@@ -380,7 +382,12 @@
     <child
       link="GR" />
     <axis
-      xyz="0 0 0" />
+      xyz="1 0 0" />
+    <limit
+      lower="-2" upper="2"
+      effort="1000"
+      velocity="1" />
+    <dynamics damping="0.5" friction="0.0"/>
   </joint>
   <link
     name="G1">

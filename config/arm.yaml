@@ -8,12 +8,12 @@ mim_arm:  # change the name
   joint2_controller: # change the name
     type: effort_controllers/JointPositionController # Type of controller. 
     joint: 'J2' # Name of the joint.  
-    pid: {p: 500, i: 100, d: 10, i_clamp_min: -100.0, i_clamp_max: 100} 
+    pid: {p: 300, i: 100, d: 100, i_clamp_min: -100.0, i_clamp_max: 100} 
 
   joint3_controller: # change the name
     type: effort_controllers/JointPositionController # Type of controller. 
     joint: 'J3' # Name of the joint.  
-    pid: {p: 500, i: 100, d: 10, i_clamp_min: -100.0, i_clamp_max: 100.0} 
+    pid: {p: 200, i: 100, d: 50, i_clamp_min: -100.0, i_clamp_max: 100.0} 
 
   joint4_controller: # change the name
     type: effort_controllers/JointPositionController # Type of controller. 

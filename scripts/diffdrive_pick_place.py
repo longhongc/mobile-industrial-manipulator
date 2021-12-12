@@ -11,6 +11,7 @@ from mim_kinematic import MIM_Arm
 
 class DiffdriveArmTalker:
     state = ["Reset", "Pick", "Grasp", "Place", "Idle"]
+    pick_pose = [1.4, 0.45, 0.6, 0.15, -1.57, 0]
 
     def __init__(self):
         self.gripper1_pub = rospy.Publisher("/mim_diffdrive_arm/mim_arm/gripper1_controller/command", Float64, queue_size=10)
@@ -57,8 +58,6 @@ class DiffdriveArmTalker:
         self.current_state == "Idle"
         self.idle()
 
-
-
     def set_joints(self):
         joint_value = Float64()
         joint_value.data = self.joints[0] 
@@ -75,7 +74,6 @@ class DiffdriveArmTalker:
         self.joint6_pub.publish(joint_value)       
         rospy.sleep(0.1)
 
-
     def reset(self):
         print("State: Reset")
         self.joints = [0, 0, 0, 0, 0, 0]
@@ -86,16 +84,19 @@ class DiffdriveArmTalker:
             self.grasp_thread.join()
             self.grasp_thread = threading.Thread(target=self.gripper_release)
             self.grasp_thread.start()
-  
 
     def pick(self):
         print("State: Pick")
-        self.joints = [1.4, 0.2, 0.4, 0, -1.57, 0]
-        self.set_joints()
-        rospy.sleep(0.2)
-        self.joints = [1.4, 0.45, 0.6, 0.15, -1.57, 0]
-        self.set_joints()
+        if(not self.joints == DiffdriveArmTalker.pick_pose):
+            self.joints = DiffdriveArmTalker.pick_pose.copy()
+            self.joints[2] = 0
+            self._set_joints_duration(1)
 
+            self.joints[2] = DiffdriveArmTalker.pick_pose[2] / 2
+            self._set_joints_duration(1)
+
+        self.joints = DiffdriveArmTalker.pick_pose
+        self._set_joints_duration(2)
 
     def grasp(self):
         print("State: Grasp")
@@ -112,11 +113,7 @@ class DiffdriveArmTalker:
 
         for joints_config in joints_traj:
             self.joints = joints_config
-            now = rospy.get_time()
-            next_time = now + delta_t
-            while now < next_time: 
-                self.set_joints()
-                now = rospy.get_time()
+            self._set_joints_duration(delta_t)
 
         self.is_grasp = True
         self.grasp_thread.join()
@@ -141,15 +138,14 @@ class DiffdriveArmTalker:
 
         for joints_config in joints_traj:
             self.joints = joints_config
-            now = rospy.get_time()
-            next_time = now + delta_t
-            while now < next_time: 
-                self.set_joints()
-                now = rospy.get_time()
+            self._set_joints_duration(delta_t)
+
+        self._set_joints_duration(1)
+
 
     def place(self):
         print("State: Place")
-        self.joints = [-1.57, 0.2, 0.4, 0, -1.57, 0]
+        self.joints = [-1.57, 0.45, 0, 0, -1.57, 0]
         self.set_joints()
         rospy.sleep(0.2)
         self.joints = [-1.57, 0.45, 0.6, 0.15, -1.57, 0]
@@ -170,11 +166,8 @@ class DiffdriveArmTalker:
 
         for joints_config in joints_traj:
             self.joints = joints_config
-            now = rospy.get_time()
-            next_time = now + delta_t
-            while now < next_time: 
-                self.set_joints()
-                now = rospy.get_time()
+            self._set_joints_duration(delta_t)
+
 
         self.is_grasp = False
         self.grasp_thread.join()
@@ -183,9 +176,6 @@ class DiffdriveArmTalker:
 
         rospy.sleep(1)
         self.lift()
-
-
-
 
     def gripper_release(self):
         rospy.loginfo("Gripper Release")
@@ -200,16 +190,19 @@ class DiffdriveArmTalker:
         rospy.loginfo("Gripper Grasp")
         while not rospy.is_shutdown() and self.is_grasp:
             gripper_force = Float64()
-            gripper_force.data = -15
+            gripper_force.data = -18
             self.gripper1_pub.publish(gripper_force)
             self.gripper2_pub.publish(gripper_force)
 
-
-
-        
-
     def idle(self):
         self.set_joints()
+
+    def _set_joints_duration(self, duration):
+        now = rospy.get_time()
+        next_time = now + duration
+        while now < next_time: 
+            self.set_joints()
+            now = rospy.get_time()
         
 
 def add_input(input_queue):
@@ -218,13 +211,12 @@ def add_input(input_queue):
 
 def print_start_menu():
     print("")
-    print("Press the following commands to control the arm: ")
+    print("Enter the following commands to control the arm: ")
     print("a) Execute Pick and Place")
     print("r) Reset the Robot to Initial State")
     print("p) Set the Robot to Pick State")
     print("g) Move Robot Downward and Grasp")
     print("Press Ctrl-c to exit")
-    print("")
 
 
 def state_machine():
